@@ -1,9 +1,5 @@
 function Footer() {
-  return (
-    <footer className="footer">
-      <p>© 2026 React Practice</p>
-    </footer>
-  );
+  return <footer>© 2026 Student Portal</footer>;
 }
 
 export default Footer;
