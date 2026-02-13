@@ -1,14 +1,7 @@
-import { useState } from "react";
-
-function Status() {
-  const [active, setActive] = useState(true);
-
+function Status({ active }) {
   return (
-    <div className="status-card">
+    <div>
       <p>Status: {active ? "Active" : "Inactive"}</p>
-      <button onClick={() => setActive(!active)}>
-        Toggle Status
-      </button>
     </div>
   );
 }

@@ -1,13 +1,10 @@
 import { useState } from "react";
 
-function StudentPanel() {
-  const [active, setActive] = useState(true);
+function StudentPanel({ active, setActive, skills, setSkills }) {
   const [showSkills, setShowSkills] = useState(false);
   const [newSkill, setNewSkill] = useState("");
-  const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript"]);
   const [editIndex, setEditIndex] = useState(null);
 
-  // Add Skill
   function addSkill() {
     if (newSkill.trim() === "") return;
 
@@ -15,19 +12,16 @@ function StudentPanel() {
     setNewSkill("");
   }
 
-  // Delete Skill
   function removeSkill(index) {
     const updatedSkills = skills.filter((_, i) => i !== index);
     setSkills(updatedSkills);
   }
 
-  // Start Editing
   function startEdit(index) {
     setNewSkill(skills[index]);
     setEditIndex(index);
   }
 
-  // Save Edited Skill
   function saveEdit() {
     if (newSkill.trim() === "") return;
 
@@ -44,19 +38,25 @@ function StudentPanel() {
       <h3>Student Panel</h3>
 
       <p>Status: {active ? "Active" : "Inactive"}</p>
-      <button onClick={() => setActive(!active)}>
+
+      <button
+        type="button"
+        onClick={() => setActive(!active)}
+      >
         Toggle Status
       </button>
 
       <br /><br />
 
-      <button onClick={() => setShowSkills(!showSkills)}>
+      <button
+        type="button"
+        onClick={() => setShowSkills(!showSkills)}
+      >
         {showSkills ? "Hide Skills" : "Show Skills"}
       </button>
 
       <br /><br />
 
-      {/* Input Section */}
       {showSkills && (
         <>
           <input
@@ -67,19 +67,29 @@ function StudentPanel() {
           />
 
           {editIndex === null ? (
-            <button onClick={addSkill}>Add Skill</button>
+            <button type="button" onClick={addSkill}>
+              Add Skill
+            </button>
           ) : (
-            <button onClick={saveEdit}>Save</button>
+            <button type="button" onClick={saveEdit}>
+              Save
+            </button>
           )}
 
           <ul style={{ marginTop: "15px" }}>
             {skills.map((skill, index) => (
               <li key={index}>
                 {skill}{" "}
-                <button onClick={() => startEdit(index)}>
+                <button
+                  type="button"
+                  onClick={() => startEdit(index)}
+                >
                   Edit
                 </button>{" "}
-                <button onClick={() => removeSkill(index)}>
+                <button
+                  type="button"
+                  onClick={() => removeSkill(index)}
+                >
                   Delete
                 </button>
               </li>

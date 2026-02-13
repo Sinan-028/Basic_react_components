@@ -56,3 +56,21 @@ footer {
   font-size: 14px;
   color: gray;
 }
+.light {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dark {
+  background-color: #222;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 10px;
+}
