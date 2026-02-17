@@ -11,44 +11,24 @@ function App() {
   const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript"]);
   const [darkMode, setDarkMode] = useState(false);
 
-  // 🔹 Runs once when app loads
-  useEffect(() => {
-    console.log("App Loaded Successfully");
-  }, []);
-
-  // 🔹 Runs whenever skills change
+  // update browser tab title
   useEffect(() => {
     document.title = "Skills: " + skills.length;
   }, [skills]);
 
-  // 🔹 Runs whenever active status changes
-  useEffect(() => {
-    console.log("Status changed:", active);
-  }, [active]);
-
   return (
     <div className={darkMode ? "dark" : "light"}>
-      <button
-        type="button"
-        onClick={() => setDarkMode(!darkMode)}
-      >
+      <button type="button" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
 
-      <Header 
-        title="Student Dashboard" 
-        skillCount={skills.length} 
-      />
+      <Header title="Student Dashboard" skillCount={skills.length} />
 
-      <Profile 
-        name="Sinan"
-        course="MERN Stack"
-        year="3"
-      />
+      <Profile name="Sinan" course="MERN Stack" year="3" />
 
       <Status active={active} />
 
-      <StudentPanel 
+      <StudentPanel
         active={active}
         setActive={setActive}
         skills={skills}

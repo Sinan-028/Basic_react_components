@@ -74,3 +74,37 @@ button {
   margin: 5px;
   padding: 6px 10px;
 }
+.footer {
+  margin-top: 40px;
+  color: gray;
+  font-size: 14px;
+}
+.light {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* cards styling */
+.profile-card,
+.status-card {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: #f3f3f3;
+}
+
+/* dark mode card fix */
+.dark .profile-card,
+.dark .status-card {
+  background-color: #1e1e1e;
+  color: white;
+}

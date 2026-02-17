@@ -1,6 +1,6 @@
 function Status({ active }) {
   return (
-    <div>
+    <div className="status-card">
       <p>Status: {active ? "Active" : "Inactive"}</p>
     </div>
   );

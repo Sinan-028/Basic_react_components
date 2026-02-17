@@ -1,5 +1,11 @@
+
 function Footer() {
-  return <footer>© 2026 Student Portal</footer>;
+  return (
+    <footer className="footer">
+      <p>© 2026 Student Dashboard</p>
+      <p>Developed by Sinan</p>
+    </footer>
+  );
 }
 
 export default Footer;
